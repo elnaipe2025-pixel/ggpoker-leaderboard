@@ -1,0 +1,1048 @@
+{
+  "captured_at_utc": "2026-08-07T13:17:00+00:00",
+  "milliseconds_header": "1786108621140",
+  "passphrase_hex": "19fdc5eb154",
+  "endpoint": "https://pml.good-game-service.com/lapi/leaderboard/223125/?limit=60&hasSummary=true&hasSummaryPaidPrizes=false&hasSummaryPrizeItem=false",
+  "payload": [
+    {
+      "nickname": "IQ200_Tilted",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 1,
+      "countryId": "SI",
+      "point": "168000.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 700,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 7,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "b0g102",
+      "brandId": "GGPCOM",
+      "siteId": "GGPPL",
+      "rank": 2,
+      "countryId": "PL",
+      "point": "149200.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 500,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 5,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Gagajos",
+      "brandId": "GGPCOM",
+      "siteId": "GGPPL",
+      "rank": 3,
+      "countryId": "PL",
+      "point": "131600.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 400,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 4,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Tibor Szenasi",
+      "brandId": "NATURAL8",
+      "siteId": "Natural8",
+      "rank": 4,
+      "countryId": "HU",
+      "point": "121200.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 300,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 3,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "JoeTheNomad",
+      "brandId": "NATURAL8",
+      "siteId": "Natural8",
+      "rank": 5,
+      "countryId": "VN",
+      "point": "110200.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 300,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 3,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "wenklotz",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 6,
+      "countryId": "AT",
+      "point": "101800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 300,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 3,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "ElCangrejoRojo",
+      "brandId": "NATURAL8",
+      "siteId": "Natural8",
+      "rank": 7,
+      "countryId": "VN",
+      "point": "97400.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 300,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 3,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Panzer Soldat",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 8,
+      "countryId": "AT",
+      "point": "86800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Elite5600",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 9,
+      "countryId": "AT",
+      "point": "68800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Harrisonn Fold",
+      "brandId": "GGPCOM",
+      "siteId": "GGPRO",
+      "rank": 10,
+      "countryId": "RO",
+      "point": "31600.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "JaYTaIZ",
+      "brandId": "NATURAL8",
+      "siteId": "Natural8",
+      "rank": 11,
+      "countryId": "TH",
+      "point": "27000.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "El PlatoVolador",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCOM",
+      "rank": 12,
+      "countryId": "AR",
+      "point": "25800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "SpinatiC",
+      "brandId": "GGPCOM",
+      "siteId": "GGPPL",
+      "rank": 13,
+      "countryId": "PL",
+      "point": "25400.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Klimenzon",
+      "brandId": "POKEROK",
+      "siteId": "GGPOK",
+      "rank": 14,
+      "countryId": "LT",
+      "point": "23800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "poznavacha",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 15,
+      "countryId": "AT",
+      "point": "17200.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "nier2b9s",
+      "brandId": "GGPCOM",
+      "siteId": "GGPUK",
+      "rank": 16,
+      "countryId": "GB",
+      "point": "16400.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 200,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 2,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "GeurosPRO",
+      "brandId": "GGPCOM",
+      "siteId": "GGPRO",
+      "rank": 17,
+      "countryId": "RO",
+      "point": "13800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Shimi33",
+      "brandId": "7XL",
+      "siteId": "7XL",
+      "rank": 18,
+      "countryId": "IL",
+      "point": "11000.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "MaiAndres",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCOM",
+      "rank": 19,
+      "countryId": "MX",
+      "point": "10600.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Br0kat",
+      "brandId": "GGPCOM",
+      "siteId": "GGPUK",
+      "rank": 20,
+      "countryId": "GB",
+      "point": "10600.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Man1nBlack",
+      "brandId": "OLYBET",
+      "siteId": null,
+      "rank": 21,
+      "countryId": "EE",
+      "point": "10400.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Big St0ne",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 22,
+      "countryId": "AT",
+      "point": "10200.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "nofold2010",
+      "brandId": "GGPCOM",
+      "siteId": "GGPBR",
+      "rank": 23,
+      "countryId": "BR",
+      "point": "9400.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "NoMercyPot",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCOM",
+      "rank": 24,
+      "countryId": "PL",
+      "point": "8800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Wilsonk",
+      "brandId": "NATURAL8",
+      "siteId": "Natural8",
+      "rank": 25,
+      "countryId": "HK",
+      "point": "8800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "CEOofPokerr",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 26,
+      "countryId": "AT",
+      "point": "8000.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "AngelOnMySide",
+      "brandId": "MBP",
+      "siteId": "GGPUKE",
+      "rank": 27,
+      "countryId": "PH",
+      "point": "7800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "mortein 76",
+      "brandId": "POKEROK",
+      "siteId": "GGPOK",
+      "rank": 28,
+      "countryId": "RU",
+      "point": "7400.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "Clincha21093",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCOM",
+      "rank": 29,
+      "countryId": "IE",
+      "point": "7000.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "kid7895555",
+      "brandId": "W88",
+      "siteId": null,
+      "rank": 30,
+      "countryId": "VN",
+      "point": "6800.00",
+      "prize": {
+        "currencyId": "USD",
+        "value": 100,
+        "description": null,
+        "updatedAt": null,
+        "prizeItem": [
+          {
+            "currencyId": "USD",
+            "value": 100,
+            "description": "{\"name\":\"Spin and Gold $100\",\"playType\":\"Tourney\",\"expiredOption\":\"FROM_ISSUE_DATE\",\"expiredOptionValue\":\"90\",\"refundable\":true,\"refundOnExpiry\":false,\"blockTransfer\":true}",
+            "updatedAt": null,
+            "quantity": 1,
+            "type": "TICKET"
+          }
+        ]
+      },
+      "prizePaid": {
+        "currencyId": null,
+        "value": 0,
+        "description": null,
+        "updatedAt": null
+      },
+      "isCorrect": true
+    },
+    {
+      "nickname": "FishHoldem",
+      "brandId": "DAVAOPOKER",
+      "siteId": "DavaoPoker",
+      "rank": 31,
+      "countryId": "PH",
+      "point": "6800.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "Mr_Smooth",
+      "brandId": "GGPCOM",
+      "siteId": "GGPCW",
+      "rank": 32,
+      "countryId": "AT",
+      "point": "6600.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "Lawrence_a72727",
+      "brandId": "POKEROK",
+      "siteId": "GGPOK",
+      "rank": 33,
+      "countryId": "KZ",
+      "point": "6200.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "guai shou",
+      "brandId": "MBP",
+      "siteId": "GGPUKE",
+      "rank": 34,
+      "countryId": "CN",
+      "point": "5800.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "ACI92",
+      "brandId": "GGPCOM",
+      "siteId": "GGPRO",
+      "rank": 35,
+      "countryId": "RO",
+      "point": "5800.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "Gugumon",
+      "brandId": "NATURAL8",
+      "siteId": "Natural8",
+      "rank": 36,
+      "countryId": "TH",
+      "point": "5800.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "rasek26",
+      "brandId": "GGPCOM",
+      "siteId": "GGPPL",
+      "rank": 37,
+      "countryId": "PL",
+      "point": "5400.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "Tawawaa",
+      "brandId": "NATURAL8",
+      "siteId": "Natural8",
+      "rank": 38,
+      "countryId": "TH",
+      "point": "5200.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "tt @fishing",
+      "brandId": "GGPCOM",
+      "siteId": "GGPRO",
+      "rank": 39,
+      "countryId": "RO",
+      "point": "5200.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    },
+    {
+      "nickname": "Michu1920",
+      "brandId": "GGPCOM",
+      "siteId": "GGPPL",
+      "rank": 40,
+      "countryId": "PL",
+      "point": "4800.00",
+      "prize": null,
+      "prizePaid": null,
+      "isCorrect": true
+    }
+  ]
+}
