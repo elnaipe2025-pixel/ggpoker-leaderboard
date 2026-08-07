@@ -30,7 +30,7 @@ import requests
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-endpoint = (
+ENDPOINT = (
     "https://pml.good-game-service.com/lapi/leaderboard/223125/"
     "?limit=60&hasSummary=true&hasSummaryPaidPrizes=false&hasSummaryPrizeItem=false"
 )
