@@ -108,10 +108,12 @@ def extract_rows(payload):
                         candidates.append(nested)
 
     for rows in candidates:
-        normalized = []
-        for i, row in enumerate(rows, start=1):
-            if not isinstance(row, dict):
-                continue
+        print(f"DEBUG: registros encontrados en este candidato: {len(rows)}")
+
+    normalized = []
+    for i, row in enumerate(rows, start=1):
+        if not isinstance(row, dict):
+            continue
 
             rank = (
                 row.get("rank")
