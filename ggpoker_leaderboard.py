@@ -129,7 +129,8 @@ def extract_rows(payload):
                 or ""
             )
             points = (
-                row.get("points")
+                row.get("point")
+                or row.get("points")
                 or row.get("score")
                 or row.get("totalPoints")
                 or row.get("total_points")
