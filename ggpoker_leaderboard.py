@@ -110,10 +110,11 @@ def extract_rows(payload):
     for rows in candidates:
         print(f"DEBUG: registros encontrados en este candidato: {len(rows)}")
 
-    normalized = []
-    for i, row in enumerate(rows, start=1):
-        if not isinstance(row, dict):
-            continue
+        normalized = []
+
+        for i, row in enumerate(rows, start=1):
+            if not isinstance(row, dict):
+                continue
 
             rank = (
                 row.get("rank")
@@ -122,6 +123,7 @@ def extract_rows(payload):
                 or row.get("ranking")
                 or i
             )
+
             player = (
                 row.get("nickname")
                 or row.get("username")
@@ -130,6 +132,7 @@ def extract_rows(payload):
                 or row.get("nickName")
                 or ""
             )
+
             points = (
                 row.get("point")
                 or row.get("points")
@@ -146,6 +149,7 @@ def extract_rows(payload):
             })
 
         if normalized:
+            print(f"DEBUG: leaderboard normalizado: {len(normalized)} registros")
             return normalized
 
     raise ValueError(
