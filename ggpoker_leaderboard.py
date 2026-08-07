@@ -30,10 +30,9 @@ import requests
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-ENDPOINT = (
-    "https://pml.good-game-service.com/lapi/leaderboard/223125/"
-    "?limit=30&hasSummary=true&hasSummaryPaidPrizes=false"
-    "&hasSummaryPrizeItem=false"
+endpoint = (
+    f"https://pml.good-game-service.com/lapi/leaderboard/{LEADERBOARD_ID}/"
+    "?limit=60&hasSummary=true&hasSummaryPaidPrizes=false&hasSummaryPrizeItem=false"
 )
 
 BASE_DIR = Path(__file__).resolve().parent
