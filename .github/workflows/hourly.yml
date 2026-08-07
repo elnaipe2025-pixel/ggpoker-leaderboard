@@ -27,10 +27,13 @@ jobs:
       - name: Collect leaderboard
         run: python ggpoker_leaderboard.py
 
+      - name: Generate leaderboard analysis
+        run: python leaderboard_analysis.py
+
       - name: Save collected data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add leaderboard_snapshots.csv raw_responses/
+          git add leaderboard_snapshots.csv leaderboard_changes.csv raw_responses/
           git diff --cached --quiet || git commit -m "Update GGPoker leaderboard"
           git push
