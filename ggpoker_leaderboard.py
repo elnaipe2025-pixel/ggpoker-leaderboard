@@ -31,7 +31,7 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
 ENDPOINT = (
-    "https://pml.good-game-service.com/lapi/leaderboard/223063/"
+    "https://pml.good-game-service.com/lapi/leaderboard/223125/"
     "?limit=30&hasSummary=true&hasSummaryPaidPrizes=false"
     "&hasSummaryPrizeItem=false"
 )
