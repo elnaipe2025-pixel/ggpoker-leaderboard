@@ -305,7 +305,15 @@ def write_traffic(rows):
 
 
 def main():
+    print("DEBUG: buscando leaderboard_snapshots.csv")
+
     snapshots = load_snapshots()
+
+    print(f"DEBUG: registros cargados: {len(snapshots)}")
+
+    if snapshots:
+        print("DEBUG: primer registro:")
+        print(snapshots[0])
 
     if not snapshots:
         raise ValueError(
