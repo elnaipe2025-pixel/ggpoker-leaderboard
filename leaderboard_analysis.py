@@ -12,12 +12,58 @@ OUTPUT_TRAFFIC_CSV = Path("leaderboard_traffic.csv")
 def load_snapshots():
     snapshots = []
 
-    with INPUT_CSV.open("r", encoding="utf-8", newline="") as f:
+    if not INPUT_CSV.exists():
+        print(f"DEBUG: no existe {INPUT_CSV}")
+        return snapshots
+
+    print(f"DEBUG: leyendo {INPUT_CSV}")
+    print(f"DEBUG: tamaño del archivo: {INPUT_CSV.stat().st_size} bytes")
+
+    # utf-8-sig elimina automáticamente un posible BOM del primer encabezado.
+    with INPUT_CSV.open("r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
 
+        if reader.fieldnames:
+            # Limpiar encabezados
+            reader.fieldnames = [
+                field.strip() if field else field
+                for field in reader.fieldnames
+            ]
+
+        print(f"DEBUG: encabezados CSV: {reader.fieldnames}")
+
         for row in reader:
-            captured_at = row.get("captured_at_utc", "").strip()
-            player = row.get("player", "").strip()
+            # Limpiar espacios de encabezados y valores
+            clean_row = {}
+
+            for key, value in row.items():
+                clean_key = key.strip() if key else key
+                clean_value = value.strip() if isinstance(value, str) else value
+                clean_row[clean_key] = clean_value
+
+            captured_at = (
+                clean_row.get("captured_at_utc")
+                or clean_row.get("captured_at")
+                or ""
+            ).strip()
+
+            player = (
+                clean_row.get("player")
+                or clean_row.get("nickname")
+                or ""
+            ).strip()
+
+            rank = (
+                clean_row.get("rank")
+                or clean_row.get("position")
+                or ""
+            )
+
+            points = (
+                clean_row.get("points")
+                or clean_row.get("point")
+                or "0"
+            )
 
             if not captured_at:
                 continue
@@ -25,8 +71,8 @@ def load_snapshots():
             snapshots.append({
                 "captured_at_utc": captured_at,
                 "player": player,
-                "rank": row.get("rank", ""),
-                "points": row.get("points", row.get("point", "0")),
+                "rank": rank,
+                "points": points,
             })
 
     return snapshots
@@ -34,26 +80,32 @@ def load_snapshots():
 
 def analyze_changes(snapshots):
     """
-    Mantiene el análisis histórico de posición y puntos.
+    Compara cada jugador con su aparición anterior.
 
-    Para cada jugador comparamos su posición y puntos
-    contra la captura anterior disponible.
+    rank_change:
+        positivo = sube puestos
+        negativo = baja puestos
+
+    points_change:
+        diferencia de puntos respecto a la captura anterior.
     """
 
     previous = {}
     output = []
 
-    # Orden cronológico
     snapshots = sorted(
         snapshots,
         key=lambda x: (
             x["captured_at_utc"],
-            int(x["rank"]) if str(x["rank"]).isdigit() else 999999
-        )
+            int(x["rank"]) if str(x["rank"]).isdigit() else 999999,
+        ),
     )
 
     for row in snapshots:
         player = row["player"]
+
+        if not player:
+            continue
 
         try:
             rank = int(row["rank"])
@@ -76,8 +128,8 @@ def analyze_changes(snapshots):
             previous_rank = old["rank"]
             previous_points = old["points"]
 
-            # Positivo = sube puestos
-            # Negativo = baja puestos
+            # Positivo = sube puestos.
+            # Negativo = baja puestos.
             rank_change = previous_rank - rank
 
             points_change = points - previous_points
@@ -116,7 +168,7 @@ def write_changes(rows):
     with OUTPUT_CHANGES_CSV.open(
         "w",
         encoding="utf-8",
-        newline=""
+        newline="",
     ) as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -125,41 +177,57 @@ def write_changes(rows):
 
 def analyze_traffic(snapshots):
     """
-    Genera métricas de tráfico a partir de las capturas.
+    Calcula métricas de actividad a partir de las capturas.
 
-    Una captura del leaderboard representa una consulta/observación
-    del ranking en ese momento.
+    Cada timestamp distinto representa una captura del leaderboard.
 
-    Métricas:
-      - snapshots
-      - rows_captured
-      - unique_players
-      - avg_rows_per_snapshot
-      - max_rows_per_snapshot
+    Se generan dos niveles:
+
+    1. Por hora
+       - número de capturas
+       - filas capturadas
+       - jugadores únicos
+       - promedio de filas por captura
+       - máximo de filas por captura
+
+    2. Por día
+       - número de capturas
+       - filas capturadas
+       - jugadores únicos
+       - promedio de filas por captura
+       - máximo de filas por captura
     """
 
-    # Agrupar primero por timestamp exacto.
+    # ---------------------------------------------------------
+    # AGRUPAR FILAS POR CAPTURA
+    # ---------------------------------------------------------
+
     by_snapshot = defaultdict(list)
 
     for row in snapshots:
         timestamp = row["captured_at_utc"]
-        by_snapshot[timestamp].append(row)
+
+        if timestamp:
+            by_snapshot[timestamp].append(row)
 
     snapshot_metrics = []
 
     for timestamp, rows in sorted(by_snapshot.items()):
-        unique_players = {
-            row["player"]
-            for row in rows
-            if row["player"]
-        }
-
         try:
             dt = datetime.fromisoformat(
                 timestamp.replace("Z", "+00:00")
             )
-        except ValueError:
+        except (ValueError, TypeError):
+            print(
+                f"DEBUG: timestamp no válido ignorado: {timestamp}"
+            )
             continue
+
+        unique_players = {
+            row["player"]
+            for row in rows
+            if row.get("player")
+        }
 
         snapshot_metrics.append({
             "captured_at_utc": timestamp,
@@ -169,16 +237,29 @@ def analyze_traffic(snapshots):
             "unique_players": len(unique_players),
         })
 
-    # -----------------------------------------
-    # AGREGADO POR HORA
-    # -----------------------------------------
+    # ---------------------------------------------------------
+    # AGRUPACIÓN POR HORA
+    # ---------------------------------------------------------
 
-    hourly = defaultdict(lambda: {
-        "snapshots": 0,
-        "rows_captured": 0,
-        "unique_players": set(),
-        "rows_per_snapshot": [],
-    })
+    hourly = defaultdict(
+        lambda: {
+            "snapshots": 0,
+            "rows_captured": 0,
+            "unique_players": set(),
+            "rows_per_snapshot": [],
+        }
+    )
+
+    # Para evitar recorrer todas las filas repetidamente,
+    # guardamos los jugadores por timestamp.
+    players_by_timestamp = {
+        timestamp: {
+            row["player"]
+            for row in rows
+            if row.get("player")
+        }
+        for timestamp, rows in by_snapshot.items()
+    }
 
     for snapshot in snapshot_metrics:
         key = (
@@ -186,17 +267,20 @@ def analyze_traffic(snapshots):
             snapshot["hour"],
         )
 
-        hourly[key]["snapshots"] += 1
-        hourly[key]["rows_captured"] += snapshot["rows_captured"]
-        hourly[key]["rows_per_snapshot"].append(
+        data = hourly[key]
+
+        data["snapshots"] += 1
+        data["rows_captured"] += snapshot["rows_captured"]
+        data["rows_per_snapshot"].append(
             snapshot["rows_captured"]
         )
 
-        # Buscar los jugadores de esa captura
-        for row in snapshots:
-            if row["captured_at_utc"] == snapshot["captured_at_utc"]:
-                if row["player"]:
-                    hourly[key]["unique_players"].add(row["player"])
+        data["unique_players"].update(
+            players_by_timestamp.get(
+                snapshot["captured_at_utc"],
+                set(),
+            )
+        )
 
     hourly_rows = []
 
@@ -226,30 +310,36 @@ def analyze_traffic(snapshots):
             "max_rows_per_snapshot": max_rows,
         })
 
-    # -----------------------------------------
-    # AGREGADO POR DÍA
-    # -----------------------------------------
+    # ---------------------------------------------------------
+    # AGRUPACIÓN POR DÍA
+    # ---------------------------------------------------------
 
-    daily = defaultdict(lambda: {
-        "snapshots": 0,
-        "rows_captured": 0,
-        "unique_players": set(),
-        "rows_per_snapshot": [],
-    })
+    daily = defaultdict(
+        lambda: {
+            "snapshots": 0,
+            "rows_captured": 0,
+            "unique_players": set(),
+            "rows_per_snapshot": [],
+        }
+    )
 
     for snapshot in snapshot_metrics:
         date = snapshot["date"]
 
-        daily[date]["snapshots"] += 1
-        daily[date]["rows_captured"] += snapshot["rows_captured"]
-        daily[date]["rows_per_snapshot"].append(
+        data = daily[date]
+
+        data["snapshots"] += 1
+        data["rows_captured"] += snapshot["rows_captured"]
+        data["rows_per_snapshot"].append(
             snapshot["rows_captured"]
         )
 
-        for row in snapshots:
-            if row["captured_at_utc"] == snapshot["captured_at_utc"]:
-                if row["player"]:
-                    daily[date]["unique_players"].add(row["player"])
+        data["unique_players"].update(
+            players_by_timestamp.get(
+                snapshot["captured_at_utc"],
+                set(),
+            )
+        )
 
     daily_rows = []
 
@@ -297,9 +387,13 @@ def write_traffic(rows):
     with OUTPUT_TRAFFIC_CSV.open(
         "w",
         encoding="utf-8",
-        newline=""
+        newline="",
     ) as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(
+            f,
+            fieldnames=fieldnames,
+        )
+
         writer.writeheader()
         writer.writerows(rows)
 
@@ -309,7 +403,9 @@ def main():
 
     snapshots = load_snapshots()
 
-    print(f"DEBUG: registros cargados: {len(snapshots)}")
+    print(
+        f"DEBUG: registros cargados: {len(snapshots)}"
+    )
 
     if snapshots:
         print("DEBUG: primer registro:")
@@ -317,27 +413,39 @@ def main():
 
     if not snapshots:
         raise ValueError(
-            "No leaderboard snapshots found in leaderboard_snapshots.csv"
+            "No leaderboard snapshots found in "
+            "leaderboard_snapshots.csv"
         )
 
-    # Análisis de jugadores
+    # ---------------------------------------------------------
+    # ANÁLISIS DE CAMBIOS
+    # ---------------------------------------------------------
+
     changes = analyze_changes(snapshots)
+
     write_changes(changes)
 
     print(
         f"OK: análisis generado con {len(changes)} registros"
     )
+
     print(
         f"Analysis CSV: {OUTPUT_CHANGES_CSV}"
     )
 
-    # Análisis de tráfico
+    # ---------------------------------------------------------
+    # ANÁLISIS DE TRÁFICO
+    # ---------------------------------------------------------
+
     traffic = analyze_traffic(snapshots)
+
     write_traffic(traffic)
 
     print(
-        f"OK: métricas de tráfico generadas con {len(traffic)} registros"
+        f"OK: métricas de tráfico generadas "
+        f"con {len(traffic)} registros"
     )
+
     print(
         f"Traffic CSV: {OUTPUT_TRAFFIC_CSV}"
     )
