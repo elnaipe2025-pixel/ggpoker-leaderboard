@@ -623,7 +623,22 @@ def main():
     print(
         f"Traffic CSV: {OUTPUT_TRAFFIC_CSV}"
     )
+    # ---------------------------------------------------------
+    # ANÁLISIS DE ACTIVIDAD DEL LEADERBOARD
+    # ---------------------------------------------------------
 
+    activity = analyze_activity(changes)
+
+    write_activity(activity)
+
+    print(
+        f"OK: métricas de actividad generadas "
+        f"con {len(activity)} registros"
+    )
+
+    print(
+        f"Activity CSV: {OUTPUT_ACTIVITY_CSV}"
+    )
 
 if __name__ == "__main__":
     main()
