@@ -7,6 +7,7 @@ from pathlib import Path
 INPUT_CSV = Path("leaderboard_snapshots.csv")
 OUTPUT_CHANGES_CSV = Path("leaderboard_changes.csv")
 OUTPUT_TRAFFIC_CSV = Path("leaderboard_traffic.csv")
+OUTPUT_ACTIVITY_CSV = Path("leaderboard_activity.csv")
 
 
 def load_snapshots():
