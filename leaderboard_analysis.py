@@ -398,7 +398,180 @@ def write_traffic(rows):
         writer.writeheader()
         writer.writerows(rows)
 
+def analyze_activity(changes):
+    """
+    Mide la actividad real del leaderboard a partir de los cambios
+    observados entre capturas.
 
+    Métricas:
+      - rank_changes: número de movimientos de posición
+      - points_changes: número de jugadores que cambiaron puntos
+      - active_players: jugadores que tuvieron algún cambio
+      - total_activity: suma de movimientos de posición y cambios de puntos
+
+    Se agregan por hora y por día.
+    """
+
+    hourly = defaultdict(
+        lambda: {
+            "rank_changes": 0,
+            "points_changes": 0,
+            "active_players": set(),
+        }
+    )
+
+    daily = defaultdict(
+        lambda: {
+            "rank_changes": 0,
+            "points_changes": 0,
+            "active_players": set(),
+        }
+    )
+
+    for row in changes:
+        timestamp = row.get("captured_at_utc", "")
+        player = row.get("player", "")
+
+        if not timestamp:
+            continue
+
+        try:
+            dt = datetime.fromisoformat(
+                timestamp.replace("Z", "+00:00")
+            )
+        except (ValueError, TypeError):
+            continue
+
+        date = dt.date().isoformat()
+        hour = dt.hour
+
+        rank_change = row.get("rank_change", "")
+        points_change = row.get("points_change", "")
+
+        # -------------------------------------------------
+        # CAMBIO DE POSICIÓN
+        # -------------------------------------------------
+
+        has_rank_change = False
+
+        try:
+            if rank_change != "" and float(rank_change) != 0:
+                has_rank_change = True
+        except (ValueError, TypeError):
+            pass
+
+        # -------------------------------------------------
+        # CAMBIO DE PUNTOS
+        # -------------------------------------------------
+
+        has_points_change = False
+
+        try:
+            if points_change != "" and float(points_change) != 0:
+                has_points_change = True
+        except (ValueError, TypeError):
+            pass
+
+        # -------------------------------------------------
+        # AGREGACIÓN HORARIA
+        # -------------------------------------------------
+
+        hourly_key = (date, hour)
+
+        if has_rank_change:
+            hourly[hourly_key]["rank_changes"] += 1
+
+        if has_points_change:
+            hourly[hourly_key]["points_changes"] += 1
+
+        if has_rank_change or has_points_change:
+            if player:
+                hourly[hourly_key]["active_players"].add(player)
+
+        # -------------------------------------------------
+        # AGREGACIÓN DIARIA
+        # -------------------------------------------------
+
+        if has_rank_change:
+            daily[date]["rank_changes"] += 1
+
+        if has_points_change:
+            daily[date]["points_changes"] += 1
+
+        if has_rank_change or has_points_change:
+            if player:
+                daily[date]["active_players"].add(player)
+
+    output = []
+
+    # -----------------------------------------------------
+    # RESULTADOS POR HORA
+    # -----------------------------------------------------
+
+    for (date, hour), data in sorted(hourly.items()):
+
+        total_activity = (
+            data["rank_changes"]
+            + data["points_changes"]
+        )
+
+        output.append({
+            "period": "hour",
+            "date": date,
+            "hour": hour,
+            "rank_changes": data["rank_changes"],
+            "points_changes": data["points_changes"],
+            "active_players": len(data["active_players"]),
+            "total_activity": total_activity,
+        })
+
+    # -----------------------------------------------------
+    # RESULTADOS POR DÍA
+    # -----------------------------------------------------
+
+    for date, data in sorted(daily.items()):
+
+        total_activity = (
+            data["rank_changes"]
+            + data["points_changes"]
+        )
+
+        output.append({
+            "period": "day",
+            "date": date,
+            "hour": "",
+            "rank_changes": data["rank_changes"],
+            "points_changes": data["points_changes"],
+            "active_players": len(data["active_players"]),
+            "total_activity": total_activity,
+        })
+
+    return output
+
+
+def write_activity(rows):
+    fieldnames = [
+        "period",
+        "date",
+        "hour",
+        "rank_changes",
+        "points_changes",
+        "active_players",
+        "total_activity",
+    ]
+
+    with OUTPUT_ACTIVITY_CSV.open(
+        "w",
+        encoding="utf-8",
+        newline="",
+    ) as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=fieldnames,
+        )
+
+        writer.writeheader()
+        writer.writerows(rows)
 def main():
     print("DEBUG: buscando leaderboard_snapshots.csv")
 
