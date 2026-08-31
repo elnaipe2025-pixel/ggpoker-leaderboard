@@ -591,9 +591,9 @@ def main():
             "leaderboard_snapshots.csv"
         )
 
-    # ---------------------------------------------------------
-    # ANÁLISIS DE CAMBIOS
-    # ---------------------------------------------------------
+    # =========================================================
+    # 1. ANÁLISIS DE CAMBIOS DE JUGADORES
+    # =========================================================
 
     changes = analyze_changes(snapshots)
 
@@ -607,38 +607,42 @@ def main():
         f"Analysis CSV: {OUTPUT_CHANGES_CSV}"
     )
 
-    # ---------------------------------------------------------
-    # ANÁLISIS DE TRÁFICO
-    # ---------------------------------------------------------
+    # =========================================================
+    # 2. MÉTRICAS DE TRÁFICO
+    # =========================================================
 
     traffic = analyze_traffic(snapshots)
 
     write_traffic(traffic)
 
     print(
-        f"OK: métricas de tráfico generadas "
-        f"con {len(traffic)} registros"
+        f"OK: métricas de tráfico generadas con "
+        f"{len(traffic)} registros"
     )
 
     print(
         f"Traffic CSV: {OUTPUT_TRAFFIC_CSV}"
     )
-    # ---------------------------------------------------------
-    # ANÁLISIS DE ACTIVIDAD DEL LEADERBOARD
-    # ---------------------------------------------------------
+
+    # =========================================================
+    # 3. MÉTRICAS DE ACTIVIDAD
+    # =========================================================
 
     activity = analyze_activity(changes)
 
     write_activity(activity)
 
     print(
-        f"OK: métricas de actividad generadas "
-        f"con {len(activity)} registros"
+        f"OK: métricas de actividad generadas con "
+        f"{len(activity)} registros"
     )
 
     print(
         f"Activity CSV: {OUTPUT_ACTIVITY_CSV}"
     )
 
+
+if __name__ == "__main__":
+    main()
 if __name__ == "__main__":
     main()
